@@ -1,4 +1,5 @@
 ### Voici le lien du déployement sur Heruko: https://dashboard.heroku.com/apps/auhtentication/activity/builds/754ccc69-0622-4d91-a197-c4fff2ae48cc
+### Si cela ne marche, vous pouvez cloner ce repository, taper npm install et après npm start
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
