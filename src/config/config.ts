@@ -1,6 +1,4 @@
-import {initializeApp} from "firebase/app";
-
-const Config = {
+export const config = {
     firebaseConfig:{
         apiKey: "AIzaSyBHzEZxP7CEztmlHhjkyJqlbOqsCdKkyA0",
         authDomain: "my-app-ebb4d.firebaseapp.com",
@@ -9,6 +7,4 @@ const Config = {
         messagingSenderId: "854052353686",
         appId: "1:854052353686:web:121266a5df44e546ce74b7"
     }
-}
-
-export const app = initializeApp(Config.firebaseConfig);
+};
