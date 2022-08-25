@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { FacebookAuthProvider, getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, TwitterAuthProvider } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 export interface ILoginPageProps {}
@@ -25,7 +25,7 @@ const LoginPage: React.FunctionComponent<ILoginPageProps> = (props) => {
     const signInWithGitHub = async () => {
         setAuthing(true);
 
-        signInWithPopup(auth, new GoogleAuthProvider())
+        signInWithPopup(auth, new GithubAuthProvider())
             .then((response) => {
                 console.log(response.user.uid);
                 navigate('/');
@@ -38,7 +38,7 @@ const LoginPage: React.FunctionComponent<ILoginPageProps> = (props) => {
     const signInWithFacebook = async () => {
         setAuthing(true);
 
-        signInWithPopup(auth, new GoogleAuthProvider())
+        signInWithPopup(auth, new FacebookAuthProvider())
             .then((response) => {
                 console.log(response.user.uid);
                 navigate('/');
@@ -48,12 +48,13 @@ const LoginPage: React.FunctionComponent<ILoginPageProps> = (props) => {
                 setAuthing(false);
             });
     }
-    const signInWithInstagram = async () => {
+    const signInWithTwitter = async () => {
         setAuthing(true);
 
-        signInWithPopup(auth, new GoogleAuthProvider())
+        signInWithPopup(auth, new TwitterAuthProvider())
             .then((response) => {
                 console.log(response.user.uid);
+                console.log("ok")
                 navigate('/');
             })
             .catch((error) => {
@@ -74,8 +75,8 @@ const LoginPage: React.FunctionComponent<ILoginPageProps> = (props) => {
             <button onClick={() => signInWithFacebook()} disabled={authing}>
                 Sign in with Facebook
             </button>
-            <button onClick={() => signInWithInstagram()} disabled={authing}>
-                Sign in with Instagram
+            <button onClick={() => signInWithTwitter()} disabled={authing}>
+                Sign in with Twitter
             </button>
         </div>
     );
